@@ -19,8 +19,6 @@ const inputStateReducer = (state, action) => {
 }
 const useInput = (validateValue) => {
     const [inputState, dispatch] = useReducer(inputStateReducer, initialInputState);
-    const [enteredValue, setEnteredValue] = useState('');
-    const [isTouched, setIsTouched] = useState(false);
 
     const valueIsValid = validateValue(inputState.value);
     const hasError = !valueIsValid && inputState.isTouched;
